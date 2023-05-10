@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('page.main')
+    <div class="container">
+        <h2 class="mb-3">DC COMICS LIST</h2>
+        <button type="button" class="btn btn-primary mb-3">
+            <a href="{{ route("comics.create") }}">Add a comic book</a>
+        </button>
+    </div>
     <div class="container d-flex flex-wrap justify-content-between py-2">
         @foreach ($comics as $comic)
         <div class="card ms-card" style="width: 18rem;">
