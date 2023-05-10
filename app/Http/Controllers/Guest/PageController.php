@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Comic;
 
 class PageController extends Controller
 {
@@ -14,7 +15,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view("home");
+        $comics = Comic::all();
+        return view("comic.index", compact("comics"));
     }
 
     /**
@@ -24,7 +26,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('comic.create');
     }
 
     /**
@@ -44,9 +46,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        return view('comic.show', compact('comic'));
     }
 
     /**
