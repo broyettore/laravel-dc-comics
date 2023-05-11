@@ -6,9 +6,11 @@
 
     <div class="card ms-card" style="width: 18rem;">
         <img src="{{  $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}">
-        <div class="card-body">
+        <div class="card-body px-0">
           <p class="card-text mb-2">{{ $comic->description }}</p>
-          <a href="{{ route("comics.index") }}">Torna al menu principale</a>
+          <button type="button" class="btn btn-primary mb-3">
+            <a href="{{ route("comics.index") }}">Torna al menu principale</a>
+        </button>
         </div>
       </div>
 </div>

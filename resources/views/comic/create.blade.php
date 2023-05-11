@@ -50,7 +50,10 @@
             <input type="text" class="form-control" id="writers"  name="writers">
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
     </form>
+    <button type="button" class="btn btn-primary mb-3">
+        <a href="{{ route("comics.index") }}">Torna al menu principale</a>
+    </button>
 </div>
 @endsection

@@ -41,18 +41,21 @@ class PageController extends Controller
 
         $newComic = new Comic();
 
-            $newComic->title = $data["title"];
-            $newComic->description = $data["description"];
-            $newComic->thumb = $data["thumb"];
-            $newComic->price = $data["price"];
-            $newComic->series = $data["series"];
-            $newComic->sale_date = $data["sale_date"];
-            $newComic->type = $data["type"];
-            $newComic->artists = $data["artists"];
-            $newComic->writers = $data["writers"];
-            $newComic->save();
+        // $newComic->title = $data["title"];
+        // $newComic->description = $data["description"];
+        // $newComic->thumb = $data["thumb"];
+        // $newComic->price = $data["price"];
+        // $newComic->series = $data["series"];
+        // $newComic->sale_date = $data["sale_date"];
+        // $newComic->type = $data["type"];
+        // $newComic->artists = $data["artists"];
+        // $newComic->writers = $data["writers"];
 
-            return redirect()->route('comics.show', $newComic->id);
+
+        $newComic->fill($data);
+        $newComic->save();
+
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
@@ -72,9 +75,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view("comic.edit", compact("comic"));
     }
 
     /**
@@ -84,9 +87,12 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = request()->all();
+        $comic->update($data);
+
+        return  to_route("comics.index");
     }
 
     /**
@@ -95,8 +101,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route("comics.index");
     }
 }

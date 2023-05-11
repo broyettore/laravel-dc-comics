@@ -7,42 +7,42 @@
         <ul class="d-flex justify-content-between align-items-center">
             <li class="m-2 p-2">
                 <a href="#">
-                    link
+                    CHARACTERS
                 </a>
             </li>
             <li class="m-2 p-2">
                 <a href="#">
-                    link
+                    STORIES
                 </a>
             </li>
             <li class="m-2 p-2">
                 <a href="#">
-                    link
+                    MERCHANDISE
                 </a>
             </li>
             <li class="m-2 p-2">
                 <a href="#">
-                    link
+                    LOCATION
                 </a>
             </li>
             <li class="m-2 p-2">
                 <a href="#">
-                    link
+                    SUPPORT
                 </a>
             </li>
             <li class="m-2 p-2">
                 <a href="#">
-                    link
+                    SERVICES
                 </a>
             </li>
             <li class="m-2 p-2">
                 <a href="#">
-                    link
+                    HELP
                 </a>
             </li>
             <li class="m-2 p-2 me-0 pe-0">
                 <a href="#">
-                    link
+                    CONTACT
                 </a>
             </li>
         </ul>
