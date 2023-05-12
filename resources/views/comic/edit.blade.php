@@ -60,6 +60,15 @@
             
             <button type="submit" class="btn btn-primary mb-3">Submit</button>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <button type="button" class="btn btn-primary mb-3">
             <a href="{{ route("comics.index") }}">Torna al menu principale</a>
         </button>

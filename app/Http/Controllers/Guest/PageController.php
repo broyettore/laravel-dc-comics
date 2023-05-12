@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\ComicRequest;
 use App\Models\Comic;
 
 class PageController extends Controller
@@ -35,8 +35,22 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
+        // $request->validate([
+        //     "title" => "required|max:60",
+        //     "description" => "required",
+        //     "thumb" => "required|url",
+        //     "price" => "required|numeric|decimal:2",
+        //     "series" => "required",
+        //     "sale_date" => "required|date",
+        //     "type" => "required",
+        //     "artists" => "required",
+        //     "writers" => "required",
+        // ]);
+
+        $request->validated();
+
         $data = $request->all();
 
         $newComic = new Comic();
@@ -87,8 +101,10 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
+        $request->validated();
+
         $data = request()->all();
         $comic->update($data);
 
